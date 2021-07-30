@@ -1,0 +1,17 @@
+{
+  "name": "newtons-lemma",
+  "version": "1.0.0",
+  "description": "Newtons Lemma contains the website that explains Newtons lemmas",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass scss/main.scss css/style.css -w"
+  },
+  "author": "Darien Dodson",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.0"
+  },
+  "dependencies": {
+    "sass": "^1.36.0"
+  }
+}

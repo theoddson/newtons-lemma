@@ -1,0 +1,109 @@
+/*~~~~~~~~~~~~~~~~~~~~
+Styles for the translation switch (i.e Newton to Informal)
+~~~~~~~~~~~~~~~~~~~~*/
+
+  .desc__header-switch{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    padding:8px 16px;
+    background-color: $color-pale-blue;
+    border-radius:20px;
+    height:16px;
+    margin-left:16px;
+    font-family: helvetica;
+    font-weight: 400;
+    font-size:14px;
+    .informal-tag{
+      color:$color-light-grey;
+    }
+  
+  }
+  
+  .switch__body {
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+    width: 24px;
+    height: 13px;
+    margin:0px 4px;
+  }
+  
+  .switch__body input {display:none}
+  
+  .switch__track {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:$color-main;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .switch__track:before {
+    position: absolute;
+    content: "";
+    height: 9px;
+    width: 9px;
+    left: 2px;
+    bottom: 2px;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  
+  /* Rounded sliders */
+  .switch__track.round {
+    border-radius: 34px;
+  
+  }
+  
+  .switch__track.round:before {
+    border-radius: 50%;
+    background-color: $color-white;
+  }
+  
+
+
+
+  // The class '.flip' adds the styles for when 
+  // the translation switch is clicked.
+  
+  .flip{
+    .videeo-desktop{
+      display: block;
+    }
+    & .informal-tag{
+      color:$color-main; //changing the color "informal" label text to an active state
+    }
+    & .newton-tag{
+      color:$color-light-grey; //changing the color "informal" label text to an innactive state
+    }
+    &.switch{ 
+      transition: all .5s ease;
+    }
+    & .switch__track:before {
+      -webkit-transform: translateX(11px); //changing the position of the switch circle
+      -ms-transform: translateX(11px);
+      transform: translateX(11px);
+    }
+    & .switch__track{
+      background:$color-main !important;
+    }
+  }
+
+  
+
+  .dull{
+    .circumscribed-tag,.inscribed-tag,.proof-tag{
+      color:$color-main !important;
+    }
+
+  }
+
+
+  

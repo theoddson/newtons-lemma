@@ -1,0 +1,151 @@
+/*
+.btn--how-to{
+    align-items: center;
+  background:rgba($color-main,1);
+  border-radius:30px;
+  bottom:12px;
+  display: flex;
+  color:$color-white;
+  cursor:pointer;
+  width:40px;
+  height:40px;
+  position:fixed;
+  right:12px;
+  justify-content: center;
+  transition: all .2s;
+  z-index:1;
+  &:hover{
+    background:rgba($color-main,.8);
+    color:$color-white;
+  }
+  &:active{
+    background:rgba($color-main,.95);
+  }
+}
+
+
+.how-to{
+    display:none;
+    align-items: center;
+    justify-content: center;
+    width:100vw;
+    height:100vh;
+    position:fixed;
+    z-index: 8;
+    text-align:center;
+    .shade{
+        width:100vw;
+        height:100vh;
+        position:fixed;
+    background-color: rgba($color-main,.4);
+    z-index: -1;
+    }
+    .onboarding-card {
+        background-color: $color-white;
+        width:300px;
+        height:400px;
+        padding: 0 16px;
+        border-radius:10px;
+        box-shadow: 0 2px 11px 0 rgba($color-main,.21);
+        display:flex;
+        flex-direction: column;
+        &__indicators{
+            height:74px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .indicator-dot{
+                width:8px;
+                height:8px;
+                background-color:rgba($color-main,.2);
+                border-radius:8px;
+                margin:0 4px;
+                &.selected{
+                    background-color: rgba($color-main,1)
+                }
+            }
+            
+        }
+        &__art{
+            height:156px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+              max-width:80%;  
+            }
+        }
+        &__text{
+            padding:12px 0;
+            h2{
+                
+            }
+            p{
+            font-size: 16px;
+            color: $color-medium-grey;
+            letter-spacing: 0;
+            text-align: center;
+            }
+        }
+    }
+    .onboarding-card {
+        background: white;
+        border-radius: 2px;
+        bottom: 0;
+        box-shadow: 0 5px 40px rgba(0,0,0,0.15);
+        height: 430px;
+        left: 0;
+        margin: auto;
+        opacity: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        user-select: none;
+        visibility: hidden;
+        width: 320px;
+      }
+  
+      .visible-card {
+        opacity: 1;
+        visibility: visible;
+      }
+}
+*/
+/*~~~~~~~~~~~~~~~~~~~~
+Overlay pagination button
+~~~~~~~~~~~~~~~~~~~~*/
+/*
+.onboarding-card__pagination{
+    display: flex;
+    .btn--pagination{
+        //background:orange;
+        padding:12px 0;
+        width: 50%;
+    }
+    .btn--pagination{
+        //background:orange;
+        padding:12px 0;
+        cursor: pointer;
+        width: 50%;
+        &--right{
+            background: $color-main;
+            border-radius: 3px;
+            color: $color-white;
+            transition: all .2s;
+            &:hover{
+                background: rgba($color-main,.8);
+            }
+        }
+        &--full{
+            color: $color-white;
+            background-color: $color-main;
+            width:100%;
+            &:hover{
+                background: rgba($color-main,.8);
+            }
+        }
+    }
+
+}
+
+*/

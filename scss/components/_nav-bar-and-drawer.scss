@@ -1,0 +1,315 @@
+/*~~~~~~~~~~~~~~~~~~~~
+Nav Bar Styles
+~~~~~~~~~~~~~~~~~~~~*/
+.nav-bar{
+    background: $color-white;
+    //background-color: transparent;
+    
+    display: flex;
+    grid-area: nav;
+    position:fixed;
+    height: 48px;
+    width: 50%;
+    max-width: 50vw;
+    align-items: center;
+    z-index: 4;
+    //transition: all .4s;
+    &__logo{
+        font-family: "essonnes-display",serif;
+        font-weight:300;
+        font-size: 18px;
+        color: $color-main;
+        letter-spacing: 0.32px;
+    }
+    
+    &__current-page{
+        font-size: 14px;
+        margin:3px 0 0 12px;
+        font-family: "essonnes-display",serif;
+        font-weight: 300;
+        color:#999999;
+    }
+    &__mobile{
+        overflow: hidden;
+        h1{
+            color:$color-stone-blue;
+            font-size: 24px;
+            margin:4px 0 0 0;//visually aligning the text within the header
+            
+        }
+        align-items: center;
+        width:calc(100% - 76px);//making  mobile nav area full with, accounting for padding and menu button spacing
+        max-width:calc(100% - 76px);
+        padding:0 12px 0 0;
+        display: flex;
+        justify-content: space-between;
+        //transition:all .2s;
+
+    }
+  }
+
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~
+Bottom Nav Styles
+~~~~~~~~~~~~~~~~~~~~*/
+
+.bottom-nav{
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255, 255, 255, 0) 100%);
+    bottom:0px;
+    display:none;
+    padding: 0 16px;
+    position: fixed;
+    width: calc(100% - 32px);
+    height:56px;
+    align-items: center;
+    z-index:2;
+    justify-content: space-between;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~
+Nav Drawer Styles
+~~~~~~~~~~~~~~~~~~~~*/
+
+.nav-drawer{
+    background:$color-white;
+    box-shadow: 8px 0px 16px 0 rgba($color-main,0.14);
+    display:none;
+    width: calc(50vw - 48px);
+    height: calc(100vh - 48px);
+    padding:24px;
+    position:fixed;
+    opacity:0;
+    z-index:3;
+    
+    &__dot{
+        width:16px;
+        margin-right:8px;
+        img{
+            display: none;
+            width:100%;
+        }
+    }
+    a{
+        width:calc(100% - 24px);
+    }
+    &__title{
+        border-top: 1px dotted $color-light-grey;
+        border-bottom:1px dotted $color-light-grey;
+        color: $color-main;
+        display:inline-block;
+        font-family:EssonnesDisplay-Light;
+        font-size: 28px;
+        line-height: 1.5;
+        margin-top:32px;
+        transition: all .2s;
+        &:hover{
+            color: rgba($color-main,0.8);
+        }
+        span{
+            font-style: italic;
+        }
+    }
+    ul{
+        margin-top:24px;
+    }
+    &__list-item{
+        background-color: $color-white;
+        border-bottom: 1px solid rgba($color-main,0.08);
+        border-radius: 3px;
+        display: flex;
+        padding:16px 0px;
+        position:relative;
+        opacity:0;
+        
+        &__title{
+            font-size: 24px;
+            
+        }
+        &__desc{
+            color:$color-stone-blue;
+            display:inline-block;
+            font-family: 'Goudy Old Style', 'Garamond', serif;
+            margin-top:8px;
+        }
+        &:hover{
+            background:$color-light;
+        }
+        &.selected{
+            img{
+                display: block;
+            }
+        }
+    }
+    .other-links{
+        opacity:0;
+        display: block;
+        width:100%;
+        position:absolute;
+        bottom:0;
+        left:0px;
+        z-index: 5;
+        &__link{
+            align-items: center;
+            border-top:1px solid $color-pale-blue;
+            display:flex;
+            height:48px;
+            &__graphic{
+                align-items: center;
+                display: flex;
+                height:100%;
+                justify-content: center;
+                width:48px;
+            }
+        }
+    }
+}
+//Animating the navigation drawer below.
+//To show the navigation drawer I used Jquery to add a class 
+//that makes it animate in on click of the menu btn
+#navDrawer.animateIn{
+    display:block;
+    animation: slideIn .2s ease-in-out;
+    animation-fill-mode: forwards;
+    .nav-drawer__list-item{
+        animation: slideFade .4s ease-in-out;
+        animation-fill-mode: forwards;
+        animation-delay: 0s;
+        &:nth-child(2){
+            animation-delay: .2s;
+        }
+    }
+    .other-links{
+        animation: slideUpFade .6s ease-in-out;
+        animation-fill-mode: forwards;
+        animation-delay: .3s;
+    }
+}
+@keyframes slideFade{
+    0%{
+        opacity:0;
+        transform: translateX(-100px);
+    }75%{
+        transform: translateX(0px);
+    }100%{
+        opacity:1;
+    }
+}
+@keyframes slideUpFade{
+    0%{
+        opacity:0;
+        transform: translateY(200px);
+    }75%{
+        transform: translateY(0px);
+    }100%{
+        opacity:1;
+    }
+}
+@keyframes slideIn{
+    0%{
+        opacity:0;
+        transform: translateX(-18vw);
+    }4%{
+        opacity:1;
+        
+    }100%{
+        transform: translateX(0px);
+        opacity:1;
+    }
+}
+
+
+//menu button
+#menu-line-1,  #menu-line-3{
+    transition: all .2s;
+}
+
+.exit-ani{
+    .btn__menu__bar--dot{
+        margin-right:0px;
+        width:2px;
+    }
+      #menu-line-1{
+        transform: translateY(4px) rotate(45deg);
+        
+      }
+      #menu-line-2{
+        opacity: 0;
+        }
+    #menu-line-3{
+        transform: translateY(-4px) rotate(-45deg);
+         }
+}
+
+
+#shade{
+    width: 100vw;
+    height: 100vh;
+    background: rgba($color-main,.2);
+    display: none;
+    z-index: 2;
+    position: fixed;
+    top:0px;
+    left:0px;
+}
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~
+Media Queries
+~~~~~~~~~~~~~~~~~~~~*/
+
+
+/*@media only screen and (max-width:800px){
+    .nav-bar{
+        .nav-bar &__mobile{
+            display:flex; //displaying mobile navbar when screen is resized to 800px or less
+        }
+    }
+}*/
+
+@media only screen and (max-width:720px){
+    .pager__right,.pager__left{
+        display: none;
+    }
+    #navDrawer{
+        width:calc(100% - 32px);
+        padding: 24px 16px 0 16px;
+        height: calc(100vh - 24px);
+    }
+    .nav-bar{
+        width:100%;
+        max-width: calc(100vw - 32px);
+        .nav-bar__pagination{
+            display: none;
+        }
+        .nav-bar &__mobile{
+            display:flex;
+        }
+    }
+    .bottom-nav{
+        display:flex;
+        z-index:1;
+    }
+}//end media query
+
+
+
+//making the switch resize on mobile
+@media only screen and (max-width:380px){
+    .nav-bar{
+        .nav-bar &__mobile{
+            .switch{ 
+                padding: 8px;
+                span{
+                    font-size:13px;
+                }
+            }
+        }
+    }
+
+
+}

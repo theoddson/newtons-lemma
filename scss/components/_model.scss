@@ -1,0 +1,164 @@
+
+
+/*~~~~~~~~~~~~~~~~~~~~
+Styles for the model live here
+~~~~~~~~~~~~~~~~~~~~*/
+
+//Lemma ii colors
+$inscribed-1: #87DCFF;
+$circumscribed-1: #5693FF;
+$proof-1: #3ddfa1;
+
+//Lemma iii colors
+$inscribed-2: #FF8EB8;
+$circumscribed-2: #FFBE76;
+$proof-2: #3ddfa1;
+
+//I wrapped each lema page with a unique Id to allow for targeting the model styles.
+
+//Lemma 2 color styles
+#lemma2{
+    .informalcolor{
+        & .circumscribed {
+            stroke:$circumscribed-1;
+            fill: rgba($circumscribed-1,0.3);
+            color:$circumscribed-1;
+        }
+        & .inscribed {
+            stroke:$inscribed-1;
+            fill:rgba($inscribed-1,0.3);
+            color: $inscribed-1;
+        }
+        & .diff {
+            stroke:$proof-1;
+            fill:rgba($proof-1,0.3);
+            color: $proof-1;
+        }
+    }
+    .circumscribed-tag{
+        color: $circumscribed-1;
+    }
+    .inscribed-tag{
+        color: $inscribed-1;
+    }
+    .proof-tag{
+        color: $proof-1;
+    }
+}
+
+#lemma3{
+    .informalcolor{
+
+        & .circumscribed {
+        stroke:$circumscribed-2;
+        fill: rgba($circumscribed-2,0.3);
+        color:$circumscribed-2;
+        }
+        & .inscribed {
+        stroke:$inscribed-2;
+        fill:rgba($inscribed-2,0.3);
+        color: $inscribed-2;
+        }
+        & .diff {
+        stroke:$proof-2;
+        fill:rgba($proof-2,0.3);
+        color: $proof-2;
+        }
+    
+    }
+    .circumscribed-tag{
+        color: $circumscribed-2;
+    }
+    .inscribed-tag{
+        color: $inscribed-2;
+    }
+    .proof-tag{
+        color: $proof-2;
+    }
+}
+
+
+
+
+//Model styles
+.rect {
+	stroke-width:1;
+	fill-opacity:0.15;
+	stroke-opacity:1;
+}
+/*.dottedRect {
+	border-style: dotted;
+	stroke-width:1;
+	fill-opacity:0.15;
+	fill: #a4850a;
+	stroke-opacity:.5;
+	stroke: #a4850a;
+	stroke-dasharray: 1 2;
+}
+*/
+// Figure-style
+.figure {
+	stroke: $color-main;
+	fill: $color-main;
+	color: $color-main;
+	/*r:2.4;*/
+}
+.outline {
+	fill: transparent;
+	stroke-width:2;
+}
+
+#diffrow{display:none}
+.flex{
+    display:flex !important;
+}
+
+.circumscribed {
+	stroke:$color-main;
+	fill: transparent;
+    color:$color-main;
+    &.label{
+        fill:$color-main;
+    }
+}
+.inscribed {
+	stroke:$color-main;
+	fill:transparent;
+    color: $color-main;
+    &.label{
+        fill:$color-main;
+    }
+}
+.diff {
+	stroke: $color-main;
+	fill: transparent;
+	color: $color-main;
+}
+.label {
+	stroke-width:.6;
+}
+.number {
+	text-align: right;
+    font-family: Lucida Console;
+    min-width: 48px;
+    width: 100%;
+    max-width: 64px; 
+    margin-right: 8px;
+}
+svg text {
+	cursor: default;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+    user-select: none;
+    font-family:"essonnes-display",serif;
+}
+.slider {
+	width: 80%;
+}
+attribution {
+	font-style: italic;
+	right: 0px;
+	vertical-align: sub;
+	font-size: smaller;
+}

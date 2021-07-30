@@ -1,0 +1,23 @@
+html{
+    font-size:15px; //this defines what 1rem is
+}
+
+a{
+    &:link{
+        color:$color-main;
+    }
+    &:visited{
+        color:$color-main;
+    }
+}
+
+
+@media only screen and (max-width:720px){
+   
+    .btn--how-to{
+        display: none !important;
+        
+    } 
+
+}
+

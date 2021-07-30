@@ -1,0 +1,359 @@
+/*~~~~~~~~~~~~~~~~~~~~
+Styles  for the landing page can be found here
+Need to fix mobile styling
+~~~~~~~~~~~~~~~~~~~~*/
+.wrapper {
+    width: calc(100vw - 80px);
+    margin: auto;
+}
+#landing {
+    background-color: $color-main;
+    .nav-bar {
+        background-color: transparent;
+    }
+    .btn__menu {
+        background: transparent;
+        &__bar--dot,
+        &__bar--line {
+            background: $color-white;
+        }
+    }
+    .exit-ani {
+        .btn__menu {
+            background: transparent;
+            &__bar--dot,
+            &__bar--line {
+                background: $color-main;
+            }
+        }
+    }
+    h1,
+    h2 {
+        color: #ffffff;
+    }
+    h2 {
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+}
+header {
+    grid-area: header;
+    padding: 40px 0;
+    margin-bottom: 56px;
+}
+.read {
+    background: #ffffff;
+    display: flex;
+    border-radius: 2px;
+    padding: 12px;
+    width: 175px;
+    &__text {
+        //background:orange;
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 24px);
+    }
+    &__arrow {
+        align-items: center;
+        //background:lime;
+        display: flex;
+        justify-content: center;
+        width: 24px;
+    }
+    &__label {
+        opacity: 0.58;
+        font-family: Helvetica;
+        font-size: 12px;
+        color: $color-main;
+        margin-bottom: 4px;
+    }
+    &__title {
+        font-family: Helvetica;
+        font-size: 16px;
+        color: $color-main;
+        letter-spacing: 0;
+    }
+}
+.landing-bg {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: url("../images/newton-bg.jpg") center center;
+    background-size: cover;
+    top: 0px;
+    left: 0px;
+}
+.landing-text {
+    padding-top: 124px;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+.newton-img {
+    position: absolute;
+    top: 72px;
+    z-index: 0;
+    right: 96px;
+}
+.landing-title {
+    font-family: "essonnes-display", "Garamond", "Times", serif;
+    font-weight: 300;
+    font-size: 58px;
+    color: $color-white;
+    letter-spacing: 1.32px;
+    line-height: 78px;
+    margin-bottom: 16px;
+    grid-area: title;
+    span {
+        font-style: italic;
+    }
+}
+
+.lemmas {
+    display: block;
+    position: relative;
+    grid-area: lemmas;
+    margin-top: 128px;
+    h3 {
+        font-family: "Goudy Old Style", "Garamond", "Times", serif;
+        font-size: 24px;
+        color: $color-main;
+        letter-spacing: 0.55px;
+        padding: 8px 0 4px 0;
+    }
+    &__cell {
+        background: $color-light;
+        border-radius: $border-radius;
+        display: flex;
+        flex-direction: column;
+        padding: 12px;
+        position: relative;
+        &--coming-soon {
+            opacity: 0.5;
+        }
+        &__thumbnail {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 300px;
+            min-height: 160px;
+            img {
+                max-height: 80%;
+                width: auto;
+            }
+        }
+    }
+}
+.how-to {
+    h2 {
+        color: $color-main !important;
+        text-align: left;
+    }
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 12px;
+    }
+    padding: 64px 0;
+
+    text-align: center;
+    background: #e9e2da;
+    &__cell {
+        padding: 0 24px;
+        &__image {
+            //background:rgba(orange,.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 160px;
+            margin-bottom: 12px;
+        }
+        h4 {
+            font-size: 24px;
+            color: $color-main !important;
+        }
+    }
+    grid-area: howTo;
+}
+.landing-table-of-contents {
+    grid-area: lemmas;
+    padding: 80px 0;
+    ul {
+        a {
+            color: white;
+            border-bottom: 1px solid rgba(white, 0.3);
+            font-size: 20px;
+            font-family: "Goudy Old Style", "Garamond", "Times", serif;
+            margin-bottom: 32px;
+            padding-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            transition: all 0.6s;
+            width: 100%;
+            &:hover {
+                border-bottom: 1px solid white;
+                transition: all 0.2s;
+            }
+        }
+        .table-tag {
+            font-family: "Helvetica", sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        .disabled {
+            opacity: 0.5;
+            &:hover {
+                border-bottom: 1px solid rgba(white, 0.3);
+            }
+        }
+    }
+}
+
+.about {
+    color: $color-white;
+    font-family: "Goudy Old Style", "Garamond", "Times", serif;
+    grid-area: about;
+    display: flex;
+    margin-top: 128px;
+    &__text {
+        width: 60%;
+        margin-right: 10%;
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        h2 {
+            margin-bottom: 12px;
+
+            color: $color-white;
+        }
+    }
+    &__author {
+        width: 30%;
+        color: $color-white;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
+        &__text {
+            font-size: 16px;
+        }
+        &__image {
+            color: $color-white;
+            clip-path: ellipse(72px 72px at center);
+            -moz-clip-path: ellipse(72px 72px at center);
+            -webkit-clip-path: ellipse(72px 72px at center);
+        }
+    }
+}
+.sub-title {
+    font-family: "Goudy Old Style", "Garamond", "Times", serif;
+    font-size: 16px;
+    font-style: italic;
+    color: $color-white;
+    margin-bottom: 24px;
+    max-width: 500px;
+    width: 60%;
+}
+.dd-label {
+    font-family: "Goudy Old Style", "Garamond", "Times", serif;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba($color-white, 0.6);
+    padding: 8px;
+    a {
+        color: rgba($color-white, 0.8);
+        text-decoration: underline;
+
+        &:hover {
+            color: rgba($color-white, 1);
+        }
+    }
+}
+
+//layout
+.landing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 12px;
+    grid-template-areas:
+        "header header header header"
+        "lemmas lemmas lemmas lemmas"
+        "howTo howTo howTo howTo"
+        "about about about about";
+    padding: 0 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.lemmas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 12px;
+}
+
+@keyframes mousemove {
+    0% {
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(200px);
+        opacity: 0;
+    }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~
+Media Queries
+~~~~~~~~~~~~~~~~~~~~*/
+
+@media only screen and (max-width: 720px) {
+    .sub-title {
+        width: 100%;
+    }
+    .how-to {
+        &-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-column-gap: 12px;
+            grid-row-gap: 80px;
+        }
+    }
+    .landing-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 12px;
+        grid-template-areas:
+            "header"
+            "scrollarea"
+            "lemmas"
+            "about";
+        padding: 0 16px !important;
+        width: calc(100vw - 32px);
+    }
+    .lemmas-grid {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        grid-gap: 12px;
+    }
+    .about {
+        flex-direction: column;
+        .about__text {
+            width: 100%;
+        }
+        .about__author {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            text-align: left;
+            &__image {
+                transform: scale(0.8);
+                clip-path: ellipse(72px 72px at center);
+            }
+        }
+    }
+}

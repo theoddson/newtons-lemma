@@ -1,0 +1,100 @@
+
+/*~~~~~~~~~~~~~~~~~~~~
+--Done--
+Styles for the Desktop  & Mobile pagination buttons
+Desktop pagination Buttons: '.page-btn'
+Mobile pagination Buttons: '.mobile-page-btn'
+~~~~~~~~~~~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~~~~~~~~~~
+Desktop pagination buttons
+~~~~~~~~~~~~~~~~~~~~*/
+.page-btn{
+    align: center;
+    width: 32px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    z-index:1;
+    background:rgba($color-main,0.05);
+    transition: all .2s;
+    &:hover{
+        background:rgba($color-main,0.1);
+    }
+    img{
+        transform: scale(0.5);
+    }
+
+}
+.page-btn--left {
+    border-bottom-right-radius: 64px;
+    border-top-right-radius: 64px;
+    left:0px; 
+    img{
+        margin-right: 7px;
+        transition:all .2s;
+    } 
+    &:hover img{
+        margin-right:14px;
+     }
+  }
+  .page-btn--right {
+    border-bottom-left-radius: 64px;
+    border-top-left-radius: 64px;
+    right:0px;
+    img{
+        position: relative;
+        margin-left: 7px;
+        transition:all .2s;
+    } 
+    &:hover img{
+        margin-left:14px;
+     }
+  }
+
+/*~~~~~~~~~~~~~~~~~~~~
+Mobile pagination buttons
+~~~~~~~~~~~~~~~~~~~~*/
+
+  .mobile-page-btn{
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    a{
+        border-radius: 30px;
+        box-shadow: 0 0 24px 0 rgba($color-main,0.3);
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width:40px;
+        height:40px;
+        
+    }
+}.video-btn{
+    background: $color-pale-blue;
+    border-radius: 24px;
+    cursor: pointer;
+    padding:16px 56px;
+    &:hover{
+        background: $color-light-grey;
+    }
+
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~
+Media Queries
+~~~~~~~~~~~~~~~~~~~~*/
+
+
+@media only screen and (max-width:720px){
+    .page-btn{
+        display: none !important;
+    }  
+}

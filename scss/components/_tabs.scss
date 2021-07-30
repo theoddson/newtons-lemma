@@ -1,0 +1,108 @@
+
+/*~~~~~~~~~~~~~~~~~~~~
+Styles for the mobile tabs
+~~~~~~~~~~~~~~~~~~~~*/
+//Hiding the tab section on Desktop
+.tab-section{
+    display: none;
+}
+
+.tabs{
+    display:none;//hide tab css on desktop
+}
+.tab-section{
+    width:calc(100vw);
+    order:2;
+    height:calc(44vh - 20px);
+    padding:0;
+    grid-area: tabs;
+    
+    .desc__text{
+        padding-bottom: 128px;
+    }
+    
+    &__header{
+        display:none;
+    }
+    #areamobile{
+        display:block;
+        visibility: visible;
+    }
+}
+
+.desc-tab {
+    background-color: $color-white;
+    padding: 16px;
+    display: none;
+    height:100%;
+    margin-bottom:0;
+    overflow:scroll;
+    
+}
+.tabs {
+    position: relative;
+    background-color: #fff;
+    border-bottom:1px solid $color-light-grey;
+    &:after {
+        content: ' ';
+        display: table;
+        clear: both;
+    }
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    &__tab {
+        float: left;
+        width: 33.333%;
+        text-align: center;
+        &:first-child.active ~ .tabs__indicator{
+            left: 0;
+        }
+        &:nth-child(2).active ~ .tabs__indicator {
+            left: 33.333%;
+        }
+        &:nth-child(3).active ~ .tabs__indicator {
+            left: calc(33.333% * 2);
+        }
+    }
+    &__indicator {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 33.333%;
+        height: 1px;
+        background-color: $color-main;
+        transition: left .32s;
+    }
+}
+.Tab {
+    > a {
+        display: block;
+        padding: 10px 12px;
+        text-decoration: none;
+        color: $color-light-grey;
+        transition: color .15s;
+    }
+    &.active {
+        > a {
+            color: $color-main;
+        }
+    }
+    &:hover {
+        > a {
+            color: rgba($color-main,.8);
+        }
+    }
+}
+
+
+@media only screen and (max-width:720px){
+    .tabs{
+        display:block;
+    }
+    .tab-section{
+        display:block;
+    }
+
+        
+}

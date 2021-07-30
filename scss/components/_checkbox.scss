@@ -1,0 +1,63 @@
+//hiding the default checkbox, we use opacity to keep it accessible for later
+.checkbox-wrap input[type="checkbox"] {
+	opacity: 0;
+	display: none;
+}
+
+//defining the check box itself
+.checkbox-wrap label::before{
+	background-color: $color-pale-blue;
+	border: 2px solid $color-light-grey;  
+	border-radius: 2px;
+	content: "";
+	cursor: pointer;
+    display: inline-block; 
+    height: 14px;
+    width: 14px;
+     
+}
+
+.checkbox-wrap label::after {
+    content: "";
+    display: inline-block;
+    height: 4px;
+    width: 8px;
+    border-left: 2px solid $color-white;
+    border-bottom: 2px solid $color-white;
+    transform: rotate(-45deg);
+}
+
+.checkbox-wrap label {
+    position: relative;
+}
+
+
+.checkbox-wrap label::after {
+    position: absolute;
+}
+
+/*Checkmark*/
+.checkbox-wrap label::after {
+    left: 4px;
+    top: 0px;
+}
+
+/*Hide the checkmark by default*/
+.checkbox-wrap input[type="checkbox"] + label::after {
+    content: none;
+}
+/*Unhide the checkmark on the checked state*/
+.checkbox-wrap input[type="checkbox"]:checked + label::after {
+    content: "";
+}
+
+/*Make check box color change on the checked state*/
+.checkbox-wrap input[type="checkbox"]:checked + label::before {
+	background-color: $color-main;
+	border: 2px solid $color-main;
+}
+
+/*Adding focus styles on the checkbox*/
+.checkbox-wrap input[type="checkbox"]:focus + label::before {
+    outline: rgb(59, 153, 252) auto 5px;
+}
